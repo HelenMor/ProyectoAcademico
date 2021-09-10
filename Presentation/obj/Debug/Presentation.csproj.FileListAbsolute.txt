@@ -67,3 +67,5 @@ C:\Users\user name\Documents\Visual Studio 2019\projects\RegistroAcademico\Prese
 C:\Users\user name\Documents\Visual Studio 2019\projects\RegistroAcademico\Presentation\bin\Data.pdb
 C:\Users\user name\Documents\Visual Studio 2019\projects\RegistroAcademico\Presentation\bin\Data.dll.config
 C:\Users\user name\Documents\Visual Studio 2019\projects\RegistroAcademico\Presentation\bin\EntityFramework.xml
+C:\Users\user name\Documents\Visual Studio 2019\projects\RegistroAcademico\Presentation\bin\EntityFramework.SqlServer.dll
+C:\Users\user name\Documents\Visual Studio 2019\projects\RegistroAcademico\Presentation\bin\EntityFramework.SqlServer.xml

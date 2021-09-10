@@ -78,6 +78,42 @@ namespace Presentation
         protected global::System.Web.UI.WebControls.TextBox TxtLastName2;
 
         /// <summary>
+        /// Control LblIdentificationId.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label LblIdentificationId;
+
+        /// <summary>
+        /// Control TxtIdentificationId.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox TxtIdentificationId;
+
+        /// <summary>
+        /// Control Lblbirthday.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label Lblbirthday;
+
+        /// <summary>
+        /// Control txtbirthday.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtbirthday;
+
+        /// <summary>
         /// Control LblAge.
         /// </summary>
         /// <remarks>
@@ -96,22 +132,40 @@ namespace Presentation
         protected global::System.Web.UI.WebControls.TextBox TxtAge;
 
         /// <summary>
-        /// Control LblIdentificationId.
+        /// Control LblGender.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label LblIdentificationId;
+        protected global::System.Web.UI.WebControls.Label LblGender;
 
         /// <summary>
-        /// Control TxtIdentificationId.
+        /// Control ddlGender.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TxtIdentificationId;
+        protected global::System.Web.UI.WebControls.DropDownList ddlGender;
+
+        /// <summary>
+        /// Control LblStatus.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label LblStatus;
+
+        /// <summary>
+        /// Control ddlStatus.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList ddlStatus;
 
         /// <summary>
         /// Control SaveStudent.

@@ -19,12 +19,12 @@ namespace Presentation
             {
                 if (!IsPostBack)
                 {
-                    /*var ListStudent =  ServicesStudent.LstStudent().Where(s => s.Status == "ACT").ToList();
+                    var ListStudent =  ServicesStudent.LstStudent().Where(s => s.Status == "ACT").ToList();
                     Session["HLstStudent"] = ListStudent;
                     if (ListStudent.Count()>0)
                     {
                         LlenarGridStudent();
-                    }*/
+                    }
                 }
             }
 
@@ -52,11 +52,19 @@ namespace Presentation
             if ( txtStudenteName.Text!="" && txtLastName1.Text != "" && TxtLastName2.Text != "" && TxtIdentificationId.Text!="")
             {
                 int IdStudente = Convert.ToInt32(Session["HIdStudent"]);
+                int Year = Convert.ToInt32( txtbirthday.Text.Substring(6, 4));
+                int Month = Convert.ToInt32(txtbirthday.Text.Substring(3, 2));
+                int Day = Convert.ToInt32(txtbirthday.Text.Substring(0, 2));               
+                DateTime nacimiento = new DateTime( Year, Month, Day);
+                TxtAge.Text = Convert.ToString(DateTime.Today.AddTicks(-nacimiento.Ticks).Year - 1);
+
                 Alum.Id = IdStudente > 0 ? IdStudente : 0;
                 Alum.Nombres = txtStudenteName.Text;
                 Alum.PrimerApellido = txtLastName1.Text;
                 Alum.SegundoApellido = TxtLastName2.Text;
                 Alum.Cedula = TxtIdentificationId.Text;
+                Alum.Status = ddlStatus.SelectedValue;
+                Alum.Sexo = ddlGender.SelectedValue;
                 ServicesStudent.SaveStudent(Alum);
             }
         }
@@ -67,22 +75,22 @@ namespace Presentation
             {
                 DataTable Table = new DataTable();
                 Table.Columns.Add("Id");
-                Table.Columns.Add("ltName");
-                Table.Columns.Add("ltLastaName1");
-                Table.Columns.Add("ltLastaName2");
-                Table.Columns.Add("LtAge");
-                Table.Columns.Add("IDentificationId");
+                Table.Columns.Add("Name");
+                Table.Columns.Add("LastName1");
+                Table.Columns.Add("LastName2");
+                Table.Columns.Add("Age");
+                Table.Columns.Add("IdentificationId");
 
                 var List = Session["HLstStudent"] as List<Alumno>;
                 foreach(var ls in List)
                 {
                     DataRow row = Table.NewRow();
                     row["Id"] = ls.Id;
-                    row["ltName"] = ls.Nombres;
-                    row["ltLastaName1"] = ls.PrimerApellido;
-                    row["ltLastaName2"] = ls.SegundoApellido;
-                    row["LtAge"] = 30;
-                    row["IDentificationId"] = ls.Cedula;
+                    row["Name"] = ls.Nombres;
+                    row["LastName1"] = ls.PrimerApellido;
+                    row["LastName2"] = ls.SegundoApellido;
+                    row["Age"] = "30";
+                    row["IdentificationId"] = ls.Cedula;
                     Table.Rows.Add(row);
                 }
                 gvStudents.DataSource = Table;

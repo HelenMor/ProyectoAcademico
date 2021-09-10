@@ -21,7 +21,7 @@
             </div>
 
             <div class="panel panel-default">
-                <div class="panel-heading" ></div>
+                <div class="panel-heading"></div>
                 <div class="panel-body">
                     <div class="row col-md-offset-1 col-lg-offset-1">
                         <div class="col-md-6 col-lg-6">
@@ -43,25 +43,56 @@
 
                     <div class="row col-md-offset-1 col-lg-offset-1">
 
-                        <div class="col-md-2 col-lg-2">
-                            <asp:Label ID="LblAge" Text="Age" runat="server"></asp:Label>
-                            <asp:TextBox ID="TxtAge" CssClass="form-control" runat="server"></asp:TextBox>
-                        </div>
-
                         <div class="col-md-4 col-lg-4">
                             <asp:Label ID="LblIdentificationId" Text="Identification Id" runat="server"></asp:Label>
                             <asp:TextBox ID="TxtIdentificationId" CssClass="form-control" runat="server"></asp:TextBox>
                         </div>
 
                         <div class="col-md-2 col-lg-2">
+                            <asp:Label ID="Lblbirthday" Text="BirthDay" runat="server"></asp:Label>
+                            <asp:TextBox ID="txtbirthday" CssClass="form-control" runat="server"></asp:TextBox>
+                        </div>
+
+
+                        <div class="col-md-2 col-lg-2">
+                            <asp:Label ID="LblAge" Text="Age" runat="server"></asp:Label>
+                            <asp:TextBox ID="TxtAge" CssClass="form-control" runat="server"></asp:TextBox>
+                        </div>
+
+                        <div class="col-md-2 col-lg-2">
+                            <asp:Label ID="LblGender" Text="Gender" runat="server"></asp:Label>
+                            <asp:DropDownList ID="ddlGender" runat="server" CssClass="form-control">
+                                <asp:ListItem Text="Select" Value="0" />
+                                <asp:ListItem Text="Female" Value="F" />
+                                <asp:ListItem Text="Male" Value="M" />
+                            </asp:DropDownList>
+                        </div>
+
+                        <div class="col-md-2 col-lg-2">
+                            <asp:Label ID="LblStatus" Text="Status" runat="server"></asp:Label>
+                            <asp:DropDownList ID="ddlStatus" runat="server" CssClass="form-control">
+                                <asp:ListItem Text="Select" Value="0" />
+                                <asp:ListItem Text="Active" Value="ACT" />
+                                <asp:ListItem Text="Inactive" Value="INA" />
+                            </asp:DropDownList>
+
+                        </div>
+
+
+                    </div>
+
+                    <div class="row col-md-offset-1 col-lg-offset-1">
+                        <div class="col-md-2 col-lg-4"></div>
+                        <div class="col-md-2 col-lg-2">
                             <br />
-                            <asp:Button ID="SaveStudent" Text="Save" runat="server" CssClass="form-control" BackColor="YellowGreen" ForeColor="Window" OnClick="SaveStudent_Click"  />
+                            <asp:Button ID="SaveStudent" Text="Save" runat="server" CssClass="form-control" BackColor="YellowGreen" ForeColor="Window" OnClick="SaveStudent_Click" />
                         </div>
 
                         <div class="col-md-2 col-lg-2">
                             <br />
                             <asp:Button ID="CancelStudent" Text="Cancel" runat="server" CssClass="form-control" BackColor="Red" ForeColor="Window" />
                         </div>
+                        <div class="col-md-2 col-lg-4"></div>
 
                     </div>
 
@@ -70,7 +101,7 @@
                     </div>
 
                     <div class="row col-md-offset-1 col-lg-offset-1">
-                        <div class="col-md-10 col-lg-10">
+                        <div class="col-md-12 col-lg-12">
                             <asp:GridView ID="gvStudents" AutoGenerateColumns="false" CssClass="table table-bordered" runat="server">
                                 <Columns>
                                     <asp:TemplateField HeaderText="Selection">
@@ -83,31 +114,31 @@
 
                                     <asp:TemplateField HeaderText="Student Name">
                                         <ItemTemplate>
-                                            <asp:Literal ID="ltName" Text="text" runat="server" />
+                                            <asp:Literal ID="ltName"  runat="server" Text='<% #Bind("Name") %>' />
                                         </ItemTemplate>
                                     </asp:TemplateField>
 
                                     <asp:TemplateField HeaderText="Last Name 1">
                                         <ItemTemplate>
-                                            <asp:Literal ID="ltLastaName1" Text="text" runat="server" />
+                                            <asp:Literal ID="ltLastaName1" Text='<% #Bind("LastName1") %>' runat="server" />
                                         </ItemTemplate>
                                     </asp:TemplateField>
 
                                     <asp:TemplateField HeaderText="Last Name 2">
                                         <ItemTemplate>
-                                            <asp:Literal ID="ltLastaName2" Text="text" runat="server" />
+                                            <asp:Literal ID="ltLastaName2" Text='<% #Bind("LastName2") %>' runat="server" />
                                         </ItemTemplate>
                                     </asp:TemplateField>
 
                                     <asp:TemplateField HeaderText="Age">
                                         <ItemTemplate>
-                                            <asp:Literal ID="LtAge" Text="text" runat="server" />
+                                            <asp:Literal ID="LtAge" Text='<% #Bind("Age") %>' runat="server" />
                                         </ItemTemplate>
                                     </asp:TemplateField>
 
                                     <asp:TemplateField HeaderText="Identification Id">
                                         <ItemTemplate>
-                                            <asp:Literal ID="IDentificationId" Text="text" runat="server" />
+                                            <asp:Literal ID="IDentificationId" Text='<% #Bind("IdentificationId") %>' runat="server" />
                                         </ItemTemplate>
                                     </asp:TemplateField>
 
