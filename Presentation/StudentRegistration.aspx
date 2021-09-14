@@ -50,7 +50,7 @@
 
                         <div class="col-md-2 col-lg-2">
                             <asp:Label ID="Lblbirthday" Text="BirthDay" runat="server"></asp:Label>
-                            <asp:TextBox ID="txtbirthday" CssClass="form-control" runat="server"></asp:TextBox>
+                            <asp:TextBox ID="txtbirthday" CssClass="form-control" runat="server" OnTextChanged="txtbirthday_TextChanged"></asp:TextBox>
                         </div>
 
 
@@ -82,6 +82,18 @@
                     </div>
 
                     <div class="row col-md-offset-1 col-lg-offset-1">
+                        <div class="col-md-8 col-lg-">
+                            <asp:Label ID="lblAdress" Text="Address" runat="server"></asp:Label>
+                            <asp:TextBox ID="txtAdress" CssClass="form-control" runat="server"></asp:TextBox>
+                        </div>
+
+                        <div class="col-md-4 col-lg-">
+                            <asp:Label ID="LblPhone" Text="Phone Number" runat="server"></asp:Label>
+                            <asp:TextBox ID="txtPhone" CssClass="form-control" runat="server"></asp:TextBox>
+                        </div>
+                    </div>
+
+                    <div class="row col-md-offset-1 col-lg-offset-1">
                         <div class="col-md-2 col-lg-4"></div>
                         <div class="col-md-2 col-lg-2">
                             <br />
@@ -95,6 +107,10 @@
                         <div class="col-md-2 col-lg-4"></div>
 
                     </div>
+
+
+                    
+
 
                     <div class="row">
                         <br />
@@ -130,17 +146,42 @@
                                         </ItemTemplate>
                                     </asp:TemplateField>
 
+                                     <asp:TemplateField HeaderText="Identification Id">
+                                        <ItemTemplate>
+                                            <asp:Literal ID="IDentificationId" Text='<% #Bind("IdentificationId") %>' runat="server" />
+                                        </ItemTemplate>
+                                    </asp:TemplateField>
+
                                     <asp:TemplateField HeaderText="Age">
                                         <ItemTemplate>
                                             <asp:Literal ID="LtAge" Text='<% #Bind("Age") %>' runat="server" />
                                         </ItemTemplate>
                                     </asp:TemplateField>
 
-                                    <asp:TemplateField HeaderText="Identification Id">
+                                    <asp:TemplateField HeaderText="Adress">
                                         <ItemTemplate>
-                                            <asp:Literal ID="IDentificationId" Text='<% #Bind("IdentificationId") %>' runat="server" />
+                                            <asp:Literal ID="LtAdress" Text='<% #Bind("Adress") %>' runat="server" />
                                         </ItemTemplate>
                                     </asp:TemplateField>
+
+                                    <asp:TemplateField HeaderText="Gender">
+                                        <ItemTemplate>
+                                            <asp:Literal ID="LtGender" Text='<% #Bind("Gender") %>' runat="server" />
+                                        </ItemTemplate>
+                                    </asp:TemplateField>
+
+                                    <asp:TemplateField HeaderText="Phone Number">
+                                        <ItemTemplate>
+                                            <asp:Literal ID="LtPhone" Text='<% #Bind("Phone") %>' runat="server" />
+                                        </ItemTemplate>
+                                    </asp:TemplateField>
+
+                                    <asp:TemplateField HeaderText="Status">
+                                        <ItemTemplate>
+                                            <asp:Literal ID="Ltstatus" Text='<% #Bind("Status") %>' runat="server" />
+                                        </ItemTemplate>
+                                    </asp:TemplateField>                                   
+                                   
 
                                 </Columns>
                             </asp:GridView>

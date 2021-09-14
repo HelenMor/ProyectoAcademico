@@ -16,10 +16,44 @@ namespace Data
             bool Result = new bool();
             var StudentEntities = new UniversidadEntities();
             try
-            {               
-                StudentEntities.Alumno.Add(Al);
-                StudentEntities.SaveChanges();
-                Result = true;                       
+            {     
+                if (Al.Id==0)
+                { 
+                   StudentEntities.Alumno.Add(Al);
+                   StudentEntities.SaveChanges();
+                   Result = true; 
+
+                }
+
+                else if(Al.Id>0)
+                {
+                 
+                   
+                    var ObjStudent = (from Es in StudentEntities.Alumno.ToList()
+                                         where Es.Id == Al.Id
+                                         select Es).LastOrDefault();
+
+
+                    if (ObjStudent != null)
+                    {
+                        ObjStudent.Nombres = Al.Nombres;
+                        ObjStudent.PrimerApellido = Al.PrimerApellido;
+                        ObjStudent.SegundoApellido = Al.SegundoApellido;
+                        ObjStudent.Cedula =Al.Cedula;
+                        ObjStudent.BirthDay = Al.BirthDay;
+                        ObjStudent.Sexo = Al.Sexo;
+                        ObjStudent.Direccion = Al.Direccion;
+                        ObjStudent.Telefono = Al.Telefono;
+                        ObjStudent.Status = Al.Status;
+                        StudentEntities.SaveChanges();
+                        Result = true;
+                    }
+
+
+                }
+                
+                
+                
             }
             catch (Exception ex)
             {

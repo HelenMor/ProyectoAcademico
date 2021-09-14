@@ -15,6 +15,7 @@
     <EntitySetMapping Name="Alumno">
       <EntityTypeMapping TypeName="UniversidadModel.Alumno">
         <MappingFragment StoreEntitySet="Alumno">
+          <ScalarProperty Name="BirthDay" ColumnName="BirthDay" />
           <ScalarProperty Name="SegundoApellido" ColumnName="SegundoApellido" />
           <ScalarProperty Name="ProcessDate" ColumnName="ProcessDate" />
           <ScalarProperty Name="IdUser" ColumnName="IdUser" />

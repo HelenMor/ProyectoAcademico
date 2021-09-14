@@ -15,6 +15,7 @@
     <Property Name="IdUser" Type="int" />
     <Property Name="ProcessDate" Type="datetime" />
     <Property Name="SegundoApellido" Type="varchar" MaxLength="50" />
+    <Property Name="BirthDay" Type="datetime" />
   </EntityType>
   <EntityType Name="Users">
     <Key>

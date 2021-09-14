@@ -25,6 +25,7 @@ namespace Entities
         public Nullable<int> IdUser { get; set; }
         public Nullable<System.DateTime> ProcessDate { get; set; }
         public string SegundoApellido { get; set; }
+        public Nullable<System.DateTime> BirthDay { get; set; }
     
         public virtual Users Users { get; set; }
     }

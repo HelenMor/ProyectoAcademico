@@ -20,6 +20,7 @@
           <Property Name="IdUser" Type="int" />
           <Property Name="ProcessDate" Type="datetime" />
           <Property Name="SegundoApellido" Type="varchar" MaxLength="50" />
+          <Property Name="BirthDay" Type="datetime" />
         </EntityType>
         <EntityType Name="Users">
           <Key>
@@ -90,6 +91,7 @@
           <Property Name="ProcessDate" Type="DateTime" Precision="3" />
           <Property Name="SegundoApellido" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <NavigationProperty Name="Users" Relationship="UniversidadModel.FK__Alumno__IdUser__36B12243" FromRole="Alumno" ToRole="Users" />
+          <Property Name="BirthDay" Type="DateTime" Precision="3" />
         </EntityType>
         <Association Name="FK__Alumno__IdUser__36B12243">
           <End Type="UniversidadModel.Users" Role="Users" Multiplicity="0..1" />
@@ -123,6 +125,7 @@
           <EntitySetMapping Name="Alumno">
             <EntityTypeMapping TypeName="UniversidadModel.Alumno">
               <MappingFragment StoreEntitySet="Alumno">
+                <ScalarProperty Name="BirthDay" ColumnName="BirthDay" />
                 <ScalarProperty Name="SegundoApellido" ColumnName="SegundoApellido" />
                 <ScalarProperty Name="ProcessDate" ColumnName="ProcessDate" />
                 <ScalarProperty Name="IdUser" ColumnName="IdUser" />
